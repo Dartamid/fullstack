@@ -6,8 +6,5 @@ def title_view(request):
     return render(
         request, 
         'title_page.html', 
-        context={
-            
-        }
     )
 
