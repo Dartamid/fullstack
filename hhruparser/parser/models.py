@@ -29,6 +29,10 @@ class Vacancy(models.Model):
         max_length=64,
         blank=True, null=True
     )
+    url = models.URLField(
+        blank=True, null=True,
+        max_length=150,
+    )
     published_at = models.DateTimeField(verbose_name='Дата публикации вакансии')    
 
     class Meta:
@@ -38,3 +42,18 @@ class Vacancy(models.Model):
 
     def __str__(self):
         return self.name
+    
+    
+class Homepage(models.Model):
+    description = models.TextField(
+        blank=True, null=True,
+        verbose_name='Описание профессии'
+    )
+    image = models.ImageField(
+        verbose_name='Изображение',
+        upload_to='homepage/'
+    )
+    
+    class Meta:
+        verbose_name = 'Главная страница'
+        
