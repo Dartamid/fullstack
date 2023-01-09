@@ -1,10 +1,14 @@
 from django.contrib import admin
-from .models import Vacancy, Geography, Skills, Demand
+from .models import Vacancy, Geography, Skills, Demand, Homepage
 
 # Register your models here.
 @admin.register(Vacancy)
 class VacancyAdmin(admin.ModelAdmin):
     list_display = ('pk', 'hh_id', 'name',)
+
+@admin.register(Homepage)
+class HomepageAdmin(admin.ModelAdmin):
+    list_display = ('pk',)
 
 
 @admin.register(Geography)
