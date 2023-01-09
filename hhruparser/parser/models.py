@@ -10,7 +10,7 @@ class Vacancy(models.Model):
         max_length=64,
         verbose_name='Название вакансии'
     )
-    desription = models.TextField(verbose_name='Описание')
+    description = models.TextField(verbose_name='Описание')
     skills = models.TextField(
         verbose_name='Навыки',
         blank=True, null=True
@@ -23,6 +23,10 @@ class Vacancy(models.Model):
         verbose_name='Оклад',
         max_length=64,
         blank=True, null=True
+    )
+    key_skills = models.TextField(
+        verbose_name='Навыки',
+        blank=True, null=True,
     )
     area = models.CharField(
         verbose_name='Регион',
@@ -57,3 +61,56 @@ class Homepage(models.Model):
     class Meta:
         verbose_name = 'Главная страница'
         
+        
+class Geography(models.Model):
+    text = models.TextField(
+        blank=True, null=True,
+        verbose_name='Текст подсказки'
+    )
+    table_salary = models.TextField(
+        blank=True, null=True,
+        verbose_name='Статистика зарплаты по городам'
+    )
+    table_dist = models.TextField(
+        blank=True, null=True,
+        verbose_name='Статистика распределения вакансий по городам'
+    )
+    
+    class Meta:
+        verbose_name = ('География вакансий')
+
+
+class Skills(models.Model):
+    text = models.TextField(
+        blank=True, null=True,
+        verbose_name='Текст подсказки',
+    )
+    table_skills = models.TextField(
+        blank=True, null=True,
+        verbose_name='Таблица скиллов по городам'
+    )
+    
+    class Meta:
+        verbose_name = ('Навыки по годам')
+    
+    def __str__(self):
+        return self.table_skills
+    
+    
+class Demand(models.Model):
+    dynamic_salary = models.ImageField(
+        verbose_name='Динамика зарплат по годам',
+        upload_to='demand/'
+    )
+    dynamic_count_prof = models.ImageField(
+        verbose_name='Динамика количества заданной вакансий',
+        upload_to='demand/'
+    )
+    dynamic_count_it = models.ImageField(
+        verbose_name='Динамика количества IT вакансий'
+    )
+    
+    class Meta:
+        verbose_name = ('Восстребованность профессии')
+    
+    

@@ -3,6 +3,8 @@
 {% load static %}
 {% block title %} Главная {% endblock %}
 {% block content %}
-    <div class="main">sdfasfdafdasdfasf</div>
-
+        {% for vacancy in vacancies %}
+        {{ vacancy.name }}\
+        <br>
+        {% endfor %}
 {% endblock %}

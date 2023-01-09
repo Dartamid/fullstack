@@ -1,5 +1,6 @@
 import datetime
 from .models import Vacancy
+from django.db import models
 import requests
 
 
@@ -17,7 +18,7 @@ def set_vacancyModels(vacancies):
                 published_at=vacancy['published_at'],
                 description=vacancy['description'],
                 key_skills=vacancy['key_skills'],
-                address=vacancy['address']['city'],
+                area=vacancy['area'],
                 url=vacancy['alternate_url'],
                 employer=vacancy['employer']['name'],
                 salary=vacancy['salary'], )
@@ -45,9 +46,9 @@ def clean_vacancy(vacancy):
 def get_vacancies():
     try:
         data = []
-        info = requests.get('https://api.hh.ru/vacancies?text=%22devops%22&specialization=1&per_page=100').json()
+        info = requests.get('https://api.hh.ru/vacancies?text=%22fullstack%22&specialization=1&per_page=100').json()
         for row in info['items']:
-            if row['name'].lower().__contains__('devops') and not row['salary'] is None:
+            if row['name'].lower().__contains__('fullstack') and not row['salary'] is None:
                 data.append({'id': row['id'], 'published_at': row['published_at']})
         data = sorted(data, key=lambda x: x['published_at'])
         vacancies = []
