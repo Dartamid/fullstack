@@ -3,8 +3,22 @@
 {% load static %}
 {% block title %} Последние вакансии {% endblock %}
 {% block content %}
+    <div class="content">
+        <h1>Последние 10 вакансий</h1>
         {% for vacancy in vacancies %}
-        {{ vacancy.name }}\
-        <br>
+        <div class="vacancy collapsible">
+            <div class="vacancy_name">
+                {{ vacancy.name }}
+            </div>
+            <div class="vacancy_skills_list">
+                {% for skill in vacancy.get_list_skills %}
+                <p class="vacancy_skill">{{ skill }}</p>
+                {% endfor %}
+            </div>
+            <div class="vacancy_salary">
+                {{ vacancy.salary}}
+            </div>
+        </div>
         {% endfor %}
+    </div>
 {% endblock %}

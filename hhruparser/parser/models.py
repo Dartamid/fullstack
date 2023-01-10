@@ -11,10 +11,6 @@ class Vacancy(models.Model):
         verbose_name='Название вакансии'
     )
     description = models.TextField(verbose_name='Описание')
-    skills = models.TextField(
-        verbose_name='Навыки',
-        blank=True, null=True
-    )
     employer = models.CharField(
         verbose_name='Компания',
         max_length=64
@@ -46,6 +42,9 @@ class Vacancy(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_list_skills(self):
+        return self.key_skills.split(', ')
     
     
 class Homepage(models.Model):
