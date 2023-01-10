@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sofia+Sans+Semi+Condensed&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    background-color: #4E4E50;
+}
+
+.container {
+    display: block;
+}
+
+.header {
+    width: 100%;
+    height: 120px;
+    background-color: #28282b;
+    box-shadow: #1A1A1D 0 5px 10px;
+}
+
+
+.logo {
+    float: center;
+    text-decoration: none;
+}
+
+.logo p{
+    font-family: Permanent Marker;
+    padding-right: 50px;
+    text-align: right;
+    font-size: 82px;
+    color: #a32d5c;
+    text-shadow: #6F2232 0 0 25px;
+}
+
+.side_nav{
+    height: 100%; 
+    width: 260px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    padding-top: 10%;
+    background-color: #111; 
+    overflow-x: hidden;
+    box-shadow: #111 5px 0 10px;
+}
+
+.small_logo {
+    color: #950740;
+    font-family: Permanent Marker;
+    width: 100px;
+    font-size: 60px;
+    border-radius: 50%;
+    box-shadow: #950740 0 0 40px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border: 5px solid #950740;
+}
+
+.links_list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.link {
+    padding: 10px 25px;
+    background-color: #950740;
+    text-align: center;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.bottom_20px {
+    margin-bottom: 20px;
+}
+
+.content {
+    display: block;
+    margin-top: 35px;
+    margin-left: 290px; 
+    padding: 20px 40px;
+    background-color: #28282b;
+    border-radius: 20px;
+}
+
+.decorate-none {
+    text-decoration: none;
+}
+
+.main_text {
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    color: #cfcfcf;
+}
+
+.main_text h1 {
+    text-align: center;
+    margin: 25px 0;
+    color: #9b2e44;
+    font-size: 56px;
+    text-shadow: #111 0 5px 8px;
+}
+
+.main_text h2 {
+    margin: 20px 0;
+    color: #9b2e44;
+    text-shadow: #111 0 3px 5px;
+}
+
+.main_text b {
+    color: #9b2e44;
+    font-size: 20px;
+}
+
+.main_text ul {
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.main_text li::marker {
+    color: #9b2e44;
+}
+
+.homepage_img img {
+    width: 700px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    border: 5px solid #111;
+    box-shadow: #9b2e44 0 5px 10px;
+}

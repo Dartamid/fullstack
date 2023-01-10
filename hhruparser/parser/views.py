@@ -4,7 +4,8 @@ from .utils import add_vacancies
 
 # Create your views here.
 def title_view(request):
-    homepage = Homepage.objects.all()[0]
+    try: homepage = Homepage.objects.all()[0]
+    except: homepage = None
     return render(
         request, 
         'title_page.html',
@@ -14,7 +15,7 @@ def title_view(request):
     )
 
 def vacancies(request):
-    add_vacancies()
+    #add_vacancies()
     vacancies = Vacancy.objects.all()[:10]
     return render(
         request,

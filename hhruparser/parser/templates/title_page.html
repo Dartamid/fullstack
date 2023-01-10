@@ -3,6 +3,12 @@
 {% load static %}
 {% block title %} Главная {% endblock %}
 {% block content %}
-    <div class="main_text">{{ homepage.text }}</div>
-    <div class="homepage_img"> {{ homepage.image.url }}</div>
+    <div class="content">
+        {% if homepage != None %}
+        <div class="main_text">{{ homepage.description|safe }}</div>
+        <div class="homepage_img"> 
+            <img src="{{ homepage.image.url }}">
+        </div>
+        {% endif %}
+    </div>
 {% endblock %}
