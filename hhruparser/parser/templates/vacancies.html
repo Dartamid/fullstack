@@ -6,7 +6,8 @@
     <div class="content">
         <h1>Последние 10 вакансий</h1>
         {% for vacancy in vacancies %}
-        <div class="vacancy collapsible">
+    <a href="#vacancy{{ vacancy.pk }}" class='popup-link'>
+        <div class="vacancy">
             <div class="vacancy_name">
                 {{ vacancy.name }}
             </div>
@@ -19,6 +20,24 @@
                 {{ vacancy.salary}}
             </div>
         </div>
+    </a>
+    <div class="popup" id='vacancy{{ vacancy.pk }}'>
+        <div class="popup__body">
+            <a class="popup__close btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+                </svg>
+            </a>
+            <div class="popup__content">
+                <h1>{{vacancy.name}}</h1>
+                <p>{{ vacancy.description|safe }}</p>
+                <p class='field'>Компания: <span class='value'>{{ vacancy.employer }}</span></p>
+                <p class='field'>Оклад: <span class='value'>{{ vacancy.salary }}</span></p>
+                <p class='field'>Регион вакансии: <span class='value'>{{ vacancy.area }}</span></p>
+                <p class='field'>Дата публикации: <span class='value'>{{ vacancy.published_at }}</span></p>
+            </div>
+        </div>
+    </div>
         {% endfor %}
     </div>
 {% endblock %}

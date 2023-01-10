@@ -8,8 +8,17 @@
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: #4E4E50;
+}
+
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
 }
 
 .container {
@@ -93,14 +102,11 @@ body {
 .content {
     display: block;
     margin-top: 35px;
-    margin-left: 290px; 
+    margin-left: 290px;
+    margin-right: 20px;
     padding: 20px 40px;
     background-color: #28282b;
     border-radius: 20px;
-}
-
-.decorate-none {
-    text-decoration: none;
 }
 
 .main_text {
@@ -193,4 +199,93 @@ h1 {
     background-color: #9b2e44;
     color: black;
     border-radius: 10px;
+}
+
+.popup  {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
+    transition: all 0.8s ease 0s;
+}
+
+.popup__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4% 4%;
+}
+
+.popup__content {
+    color: #cfcfcf;
+    border-radius: 20px;
+    background-color: #28282b;
+    color: rgb(56, 56, 56);
+    padding: 40px;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+
+.popup__content p {
+    color: #cfcfcf;
+    margin: 20px 10px;
+}
+
+.popup__content ul {
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+.popup__content li {
+    color: #cfcfcf;
+}
+
+.popup__content li::marker {
+    color: #9b2e44;
+}
+
+.popup__image {
+    display: block;
+    height: 100%;
+}
+
+.popup__close {
+    color: lightgray;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.popup.open {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.open .popup__content {
+    transform: perspective(600px) translate(0, 0) rotateX(0deg);
+    opacity: 1;
+}
+
+.field {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+.value {
+    padding: 5px;
+    background-color: #9b2e44;
+    border-radius: 5px;
+    color: #111;
+    margin-left: 10px;
 }
