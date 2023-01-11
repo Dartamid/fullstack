@@ -6,7 +6,7 @@
 <div class="content">
     <h1>География вакансий</h1>
     <h2 class='main_text'>Зарплаты и доля IT-вакансий по городам</h2>
-    <img width='1500' style='margin-top: 30px;' src="{{ geography.plot.url }}" alt="" class="">
+    <img width='100%' style='margin-top: 30px;' src="{{ geography.plot.url }}" alt="" class="">
     <div class="double">
         <div class="column">
             <h2 class='main_text' style='text-align: center; margin: 30px 0;'>Уровень зарплат по городам</h2>
@@ -18,7 +18,7 @@
         </div>
     </div>
     <h2 class='main_text' style='margin-top: 30px;'>Зарплаты и доля вакансий Fullstack разработчика по городам</h2>
-    <img width='1500' style='margin-top: 30px;' src="{{ geography.plot_prof.url }}" alt="" class="">
+    <img width='100%' style='margin-top: 30px;' src="{{ geography.plot_prof.url }}" alt="" class="">
     <div class="double">
         <div class="column">
             <h2 class='main_text' style='text-align: center; margin: 30px 0;'>Уровень зарплат Fullstack разработчика по городам</h2>
@@ -32,3 +32,144 @@
 </div>
 
 {% endblock %}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Год</th>
+            <th>Средняя зарплата</th>
+            <th>Средняя зарплата Fullstack</th>
+            <th>Количество вакансий</th>
+            <th>Количество вакансий Fullstack</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2005</td>
+            <td>93601</td>
+            <td>0</td>
+            <td>1836</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2006</td>
+            <td>93582</td>
+            <td>0</td>
+            <td>16229</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2007</td>
+            <td>102279</td>
+            <td>0</td>
+            <td>24000</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2008</td>
+            <td>81834</td>
+            <td>0</td>
+            <td>30627</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2009</td>
+            <td>53351</td>
+            <td>0</td>
+            <td>20989</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2010</td>
+            <td>49933</td>
+            <td>0</td>
+            <td>31930</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2011</td>
+            <td>53387</td>
+            <td>0</td>
+            <td>42282</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2012</td>
+            <td>52049</td>
+            <td>0</td>
+            <td>49309</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2013</td>
+            <td>56452</td>
+            <td>0</td>
+            <td>68149</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>2014</td>
+            <td>51993</td>
+            <td>106155</td>
+            <td>75828</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>2015</td>
+            <td>52695</td>
+            <td>200298</td>
+            <td>78934</td>
+            <td>52</td>
+        </tr>
+        <tr>
+            <td>2016</td>
+            <td>62735</td>
+            <td>128773</td>
+            <td>85740</td>
+            <td>223</td>
+        </tr>
+        <tr>
+            <td>2017</td>
+            <td>61908</td>
+            <td>116660</td>
+            <td>95811</td>
+            <td>459</td>
+        </tr>
+        <tr>
+            <td>2018</td>
+            <td>67679</td>
+            <td>149308</td>
+            <td>110383</td>
+            <td>939</td>
+        </tr>
+        <tr>
+            <td>2019</td>
+            <td>71828</td>
+            <td>127558</td>
+            <td>130763</td>
+            <td>1104</td>
+        </tr>
+        <tr>
+            <td>2020</td>
+            <td>72595</td>
+            <td>122546</td>
+            <td>115116</td>
+            <td>1119</td>
+        </tr>
+        <tr>
+            <td>2021</td>
+            <td>84102</td>
+            <td>152585</td>
+            <td>65205</td>
+            <td>777</td>
+        </tr>
+        <tr>
+            <td>2022</td>
+            <td>97903</td>
+            <td>180548</td>
+            <td>20685</td>
+            <td>208</td>
+        </tr>
+    </tbody>
+    </table>

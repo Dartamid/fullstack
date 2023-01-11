@@ -133,16 +133,17 @@ class SkillsPlot(models.Model):
         verbose_name_plural = ('Графики навыков')
     
 class Demand(models.Model):
-    dynamic_salary = models.ImageField(
-        verbose_name='Динамика зарплат по годам',
+    table = models.TextField(
+        blank=True, null=True,
+    )
+    salary = models.ImageField(
+        blank=True, null=True,
+        verbose_name='Уровень зарплат по годам',
         upload_to='demand/'
     )
-    dynamic_count_prof = models.ImageField(
-        verbose_name='Динамика количества заданной вакансий',
-        upload_to='demand/'
-    )
-    dynamic_count_it = models.ImageField(
-        verbose_name='Динамика количества IT вакансий'
+    count = models.ImageField(
+        blank=True, null=True,
+        verbose_name='Количество вакансий по годам'
     )
     
     class Meta:

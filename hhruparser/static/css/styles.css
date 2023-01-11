@@ -324,7 +324,6 @@ h1 {
 }
 .table tbody td {
 	text-align: center;
-	border: none;
 	padding: 10px 15px;
 	font-size: 14px;
 	vertical-align: top;
@@ -336,11 +335,10 @@ h1 {
 	background: #b87a86;
 }
 .table tbody tr td:first-child {
-	border-radius: 8px;
+	border-radius: 8px 0 0 8px;
 }
 .table tbody tr td:last-child {
-    background-color: #28282b;
-    display: flex;
+    border-radius: 0 8px 8px 0;
 }
 
 .double {

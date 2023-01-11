@@ -17,6 +17,7 @@
                     <tr>
                         <td>{{ skills_year.year }}</td>
                         <td>
+                            <div style="display: flex; flex-wrap: wrap;">
                             {% if skills_year.get_list_skills != None %}
                             {% for skill in skills_year.get_list_skills %}
                                 <p class="vacancy_skill">{{ skill }}</p>
@@ -24,6 +25,7 @@
                             {% else %}
                                 <p class="vacancy_skill">Нет данных</p>
                             {% endif %}
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}
