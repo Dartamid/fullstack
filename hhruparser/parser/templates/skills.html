@@ -3,6 +3,32 @@
 {% load static %}
 {% block title %} Навыки {% endblock %}
 {% block content %}
-    <div class="main">sdfasfdafdasdfasf</div>
-
+    <div class="content">
+        <h1>Топ навыков по годам</h1>
+        <div class="table_block">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Года</th>
+                        <th>Навыки</th>
+                </thead>
+                <tbody>
+                    {% for skills_year in skills %}
+                    <tr>
+                        <td>{{ skills_year.year }}</td>
+                        <td>
+                            {% if skills_year.get_list_skills != None %}
+                            {% for skill in skills_year.get_list_skills %}
+                                <p class="vacancy_skill">{{ skill }}</p>
+                            {% endfor %}
+                            {% else %}
+                                <p class="vacancy_skill">Нет данных</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

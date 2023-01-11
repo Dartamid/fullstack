@@ -18,7 +18,7 @@ class Geography(admin.ModelAdmin):
 
 @admin.register(Skills)
 class SkillsAdmin(admin.ModelAdmin):
-    list_display = ('pk',)
+    list_display = ('year',)
     
     
 @admin.register(Demand)

@@ -80,21 +80,38 @@ class Geography(models.Model):
 
 
 class Skills(models.Model):
-    text = models.TextField(
+    year = models.CharField(
+        max_length=5,
         blank=True, null=True,
-        verbose_name='Текст подсказки',
+        verbose_name='Год',
     )
-    table_skills = models.TextField(
+    list_skills = models.TextField(
         blank=True, null=True,
-        verbose_name='Таблица скиллов по городам'
+        verbose_name='Список навыков'
     )
     
     class Meta:
         verbose_name = ('Навыки по годам')
-    
+        
     def __str__(self):
-        return self.table_skills
+        return self.year
+        
+    def get_list_skills(self):
+        if self.list_skills != '':
+            return self.list_skills.split(', ')
+        else: return None
+        
     
+    
+class SkillsPlot(models.Model):
+    plot = models.ImageField(
+        upload_to='skills/',
+        blank=True, null=True
+    )
+    
+    class Meta:
+        verbose_name = ('График навыков',)
+        verbose_name_plural = ('Графики навыков')
     
 class Demand(models.Model):
     dynamic_salary = models.ImageField(

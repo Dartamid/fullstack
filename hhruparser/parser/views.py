@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Vacancy, Homepage
+from .models import Vacancy, Homepage, Skills
 from .utils import add_vacancies
 
 # Create your views here.
@@ -22,5 +22,15 @@ def vacancies(request):
         'vacancies.html',
         context={
             'vacancies': vacancies,
+        }
+    )
+    
+def skills_view(request):
+    skills = Skills.objects.all()[:20]
+    return render(
+        request,
+        'skills.html',
+        context={
+            'skills': skills,
         }
     )
