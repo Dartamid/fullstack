@@ -342,3 +342,14 @@ h1 {
     background-color: #28282b;
     display: flex;
 }
+
+.double {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.column {
+    width: 46%;
+}

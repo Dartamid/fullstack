@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Vacancy, Homepage, Skills
+from .models import Vacancy, Homepage, Skills, Geography
 from .utils import add_vacancies
 
 # Create your views here.
@@ -32,5 +32,15 @@ def skills_view(request):
         'skills.html',
         context={
             'skills': skills,
+        }
+    )
+    
+def geography_view(request):
+    geography = Geography.objects.all()[0]
+    return render(
+        request,
+        'geography.html',
+        context={
+            'geography': geography,
         }
     )

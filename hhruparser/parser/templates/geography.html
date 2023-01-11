@@ -5,6 +5,30 @@
 {% block content %}
 <div class="content">
     <h1>География вакансий</h1>
+    <h2 class='main_text'>Зарплаты и доля IT-вакансий по городам</h2>
+    <img width='1500' style='margin-top: 30px;' src="{{ geography.plot.url }}" alt="" class="">
+    <div class="double">
+        <div class="column">
+            <h2 class='main_text' style='text-align: center; margin: 30px 0;'>Уровень зарплат по городам</h2>
+            {{ geography.table_salary|safe }}
+        </div>
+        <div class="column">
+            <h2 class='main_text' style='text-align: center; margin: 30px 0;'>Доля вакансий по городам</h2>
+            {{ geography.table_dist|safe }}
+        </div>
+    </div>
+    <h2 class='main_text' style='margin-top: 30px;'>Зарплаты и доля вакансий Fullstack разработчика по городам</h2>
+    <img width='1500' style='margin-top: 30px;' src="{{ geography.plot_prof.url }}" alt="" class="">
+    <div class="double">
+        <div class="column">
+            <h2 class='main_text' style='text-align: center; margin: 30px 0;'>Уровень зарплат Fullstack разработчика по городам</h2>
+            {{ geography.table_salary_prof|safe }}
+        </div>
+        <div class="column">
+            <h2 class='main_text' style='text-align: center; margin: 30px 0;'>Доля вакансий Fullstack разработчиков по городам</h2>
+            {{ geography.table_dist_prof|safe }}
+        </div>
+    </div>
 </div>
 
 {% endblock %}

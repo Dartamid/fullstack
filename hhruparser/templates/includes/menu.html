@@ -1,5 +1,5 @@
 <div class="side_nav">
-    <div class="small_logo">FSD</div>
+    <a href="{% url 'title_page' %}" class=""><div class="small_logo">FSD</div></a>
     <br>
     <div class="links_list ">
         <a href="{% url 'last_vacancies' %}" class="decorate-none">
@@ -8,7 +8,7 @@
         <a href="{% url 'skills_list' %}" class="decorate-none">
             <div class="link bottom_20px">Навыки</div>
         </a>
-        <a href="" class="decorate-none">
+        <a href="{% url 'geography' %}" class="decorate-none">
             <div class="link bottom_20px">География вакансий</div>
         </a>
         <a href="" class="decorate-none">

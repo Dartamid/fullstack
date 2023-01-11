@@ -74,6 +74,25 @@ class Geography(models.Model):
         blank=True, null=True,
         verbose_name='Статистика распределения вакансий по городам'
     )
+    plot = models.ImageField(
+        blank=True, null=True,
+        upload_to='geography/',
+        verbose_name='График'
+    )
+    plot_prof = models.ImageField(
+        blank=True, null=True,
+        upload_to='geography/',
+        verbose_name='График'
+    )
+    table_salary_prof = models.TextField(
+        blank=True, null=True,
+        verbose_name='Статистика зарплаты по городам'
+    )
+    table_dist_prof = models.TextField(
+        blank=True, null=True,
+        verbose_name='Статистика распределения вакансий по городам'
+    )
+    
     
     class Meta:
         verbose_name = ('География вакансий')
