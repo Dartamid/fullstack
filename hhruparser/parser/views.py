@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Vacancy, Homepage, Skills, Geography, Demand
+from .models import Vacancy, Homepage, Skills, Geography, Demand, SkillsPlot
 from .utils import add_vacancies
 
-# Create your views here.
+
 def title_view(request):
     try: homepage = Homepage.objects.all()[0]
     except: homepage = None
@@ -15,7 +15,7 @@ def title_view(request):
     )
 
 def vacancies(request):
-    #add_vacancies()
+    add_vacancies()
     vacancies = Vacancy.objects.all()[:10]
     return render(
         request,
@@ -27,11 +27,13 @@ def vacancies(request):
     
 def skills_view(request):
     skills = Skills.objects.all()[:20]
+    plot = SkillsPlot.objects.all()[0]
     return render(
         request,
         'skills.html',
         context={
             'skills': skills,
+            'plot': plot,
         }
     )
     
